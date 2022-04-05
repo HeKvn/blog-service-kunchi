@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { ArticleModule } from './modules/article/article.module';
 import { UserModule } from './modules/user/user.module';
 import { TagModule } from './modules/tag/tag.module';
+import { PictureModule } from './modules/picture/picture.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { TagModule } from './modules/tag/tag.module';
     }),
     ArticleModule,
     UserModule,
-    TagModule
+    TagModule,
+    PictureModule
   ],
   controllers: [AppController],
   providers: [AppService],

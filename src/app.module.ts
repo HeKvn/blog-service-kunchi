@@ -11,11 +11,11 @@ import { PictureModule } from './modules/picture/picture.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '',
+      host: '175.178.9.4',
       port: 3306,
-      username: '',
-      password: '',
-      database: '',
+      username: 'hk01',
+      password: 'hk01',
+      database: 'test',
       // entities: ['dist/modules/**/*.entity{.ts,.js}'],
       autoLoadEntities: true, // 自动加载我们的实体,每个通过forFeature()注册的实体都会自动添加到配置对象的entities数组
       synchronize: true

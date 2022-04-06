@@ -30,7 +30,8 @@ export class ArticleService {
         'article.title', 
         'article.description',
         'article.createTime',
-        'article.updateTime'
+        'article.updateTime',
+        'article.cover'
       ])
       .addSelect([
         'tag.id',
@@ -58,7 +59,8 @@ export class ArticleService {
         'article.title', 
         'article.description',
         'article.createTime',
-        'article.updateTime'
+        'article.updateTime',
+        'article.cover'
       ])
       .addSelect([
         'tag.id',
@@ -83,8 +85,10 @@ export class ArticleService {
         'article.id',
         'article.title', 
         'article.description',
+        'article.content',
         'article.createTime',
-        'article.updateTime'
+        'article.updateTime',
+        'article.cover'
       ])
       .addSelect([
         'tag.id',
@@ -112,6 +116,7 @@ export class ArticleService {
     article.title = title
     article.content = articleCreateDTO.content
     article.description = articleCreateDTO.description
+    article.cover = articleCreateDTO.cover || ''
     const result = await this.articleRepository.save(article)
     return { info: result }
   }
@@ -132,6 +137,7 @@ export class ArticleService {
     articleToUpdate.content = articleEditDTO.content
     articleToUpdate.title = articleEditDTO.title
     articleToUpdate.description = articleEditDTO.description
+    articleToUpdate.cover = articleEditDTO.cover || ''
     const result = await this.articleRepository.save(articleToUpdate)
     return { info: result }
   }

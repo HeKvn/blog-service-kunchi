@@ -20,4 +20,8 @@ export class Article extends Common {
   @ManyToMany(type => Tag, tag => tag.articles)
   @JoinTable()
   tags: Tag[]
+
+  // 文章封面
+  @Column('text')
+  cover: string
 }

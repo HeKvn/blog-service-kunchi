@@ -18,6 +18,9 @@ class Info {
 
   @ApiProperty({ description: '文章内容', example: '文章内容' }) 
   content: string;
+
+  @ApiProperty({ description: '文章封面', example: 'url' })
+  cover: string | null
 }
 
 export class ArticleInfoVO {

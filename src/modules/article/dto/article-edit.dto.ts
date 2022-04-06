@@ -1,6 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger"
 import { IsNotEmpty } from "class-validator"
-import { Tag } from "src/modules/tag/entity/tag.entity"
 import { IdDTO } from "./id.dto"
 
 export class ArticleEditDTO extends IdDTO {
@@ -35,4 +34,7 @@ export class ArticleEditDTO extends IdDTO {
    * @example [1, 2]
    */
    readonly tags?: number[]
+
+   @ApiProperty({ description: '文章封面' })
+   readonly cover?: string
 }

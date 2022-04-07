@@ -11,7 +11,7 @@ import { PictureModule } from './modules/picture/picture.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '175.178.9.4',
+      host: 'localhost',
       port: 3306,
       username: 'hk01',
       password: 'hk01',

@@ -37,6 +37,8 @@ export class TagController {
     return this.tagService.update(tagUpdateDTO)
   }
 
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard('jwt'))
   @Delete(':id')
   remove (@Param() idDTO: IdDTO): Promise<TagInfoVO> {
     return this.tagService.remove(idDTO)

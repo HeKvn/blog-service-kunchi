@@ -31,7 +31,8 @@ export class ArticleService {
         'article.description',
         'article.createTime',
         'article.updateTime',
-        'article.cover'
+        'article.cover',
+        'article.author'
       ])
       .addSelect([
         'tag.id',
@@ -60,7 +61,8 @@ export class ArticleService {
         'article.description',
         'article.createTime',
         'article.updateTime',
-        'article.cover'
+        'article.cover',
+        'article.author'
       ])
       .addSelect([
         'tag.id',
@@ -81,15 +83,6 @@ export class ArticleService {
       .createQueryBuilder('article')
       .where('article.id = :id and article.isDelete = false', { id },)
       .leftJoin('article.tags', 'tag')
-      .select([
-        'article.id',
-        'article.title', 
-        'article.description',
-        'article.content',
-        'article.createTime',
-        'article.updateTime',
-        'article.cover'
-      ])
       .addSelect([
         'tag.id',
         'tag.label'
@@ -117,6 +110,7 @@ export class ArticleService {
     article.content = articleCreateDTO.content
     article.description = articleCreateDTO.description
     article.cover = articleCreateDTO.cover || ''
+    article.author = 'HeKvn'
     const result = await this.articleRepository.save(article)
     return { info: result }
   }

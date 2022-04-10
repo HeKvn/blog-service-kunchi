@@ -33,8 +33,9 @@ export class ArticleEditDTO extends IdDTO {
    * 标签 id
    * @example [1, 2]
    */
-   readonly tags?: number[]
+  @ApiProperty({ description: '文章标签' })
+  readonly tags?: number[]
 
-   @ApiProperty({ description: '文章封面' })
-   readonly cover?: string
+  @ApiProperty({ description: '文章封面' })
+  readonly cover?: string
 }

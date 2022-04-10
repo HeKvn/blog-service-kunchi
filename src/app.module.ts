@@ -14,7 +14,7 @@ import { PictureModule } from './modules/picture/picture.module';
       host: 'localhost',
       port: 3306,
       username: 'hk01',
-      password: 'hk01',
+      password: '123456',
       database: 'test',
       // entities: ['dist/modules/**/*.entity{.ts,.js}'],
       autoLoadEntities: true, // 自动加载我们的实体,每个通过forFeature()注册的实体都会自动添加到配置对象的entities数组

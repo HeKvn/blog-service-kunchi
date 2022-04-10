@@ -16,12 +16,16 @@ export class Article extends Common {
   @Column('text')
   content: string
 
+  // 文章封面
+  @Column('text')
+  cover: string
+
+  // 作者
+  @Column({ length: 255 })
+  author: string
+
   // 标签
   @ManyToMany(type => Tag, tag => tag.articles)
   @JoinTable()
   tags: Tag[]
-
-  // 文章封面
-  @Column('text')
-  cover: string
 }

@@ -18,6 +18,9 @@ class SimpleInfo {
 
   @ApiProperty({ description: '文章封面', example: 'url' })
   cover: string | null
+
+  @ApiProperty({ description: '文章作者', example: 'Hekvn' })
+  author: string
 }
 
 class Pagination {

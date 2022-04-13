@@ -42,8 +42,8 @@ export class ArticleService {
       .take(pageSize)
       .getManyAndCount()
     const [ list, total ] = await getList
-    const pageination = getPagination(total, pageSize, page)
-    return { list, pageination }
+    const pagination = getPagination(total, pageSize, page)
+    return { list, pagination }
   }
 
   // 根据tag获取文章

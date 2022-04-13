@@ -13,12 +13,12 @@ export class UserController {
     private userService: UserService
   ){}
 
-  @ApiBody({ type: RegisterDTO })
-  @ApiOkResponse({ description: '注册', type: UserInfoResponse })
-  @Post('register')
-  async register (@Body() registerDTO: RegisterDTO): Promise<UserInfoResponse> {
-    return this.userService.register(registerDTO)
-  }
+  // @ApiBody({ type: RegisterDTO })
+  // @ApiOkResponse({ description: '注册', type: UserInfoResponse })
+  // @Post('register')
+  // async register (@Body() registerDTO: RegisterDTO): Promise<UserInfoResponse> {
+  //   return this.userService.register(registerDTO)
+  // }
 
   @ApiBody({ type: LoginDTO })
   @ApiOkResponse({ description: '登录', type: TokenResponse })

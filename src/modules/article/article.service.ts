@@ -40,6 +40,7 @@ export class ArticleService {
       ])
       .skip((page - 1) * pageSize)
       .take(pageSize)
+      .orderBy('article.updateTime', 'DESC')
       .getManyAndCount()
     const [ list, total ] = await getList
     const pagination = getPagination(total, pageSize, page)
@@ -143,5 +144,30 @@ export class ArticleService {
     articleToUpdate.isDelete = true
     const result = await this.articleRepository.save(articleToUpdate)
     return { info: result }
+  }
+
+  // 获取所有文章归档
+  async getAllArticle () {
+    const articleList = await this.articleRepository
+    .createQueryBuilder('article')
+    .where({ isDelete: false })
+    .leftJoin('article.tags', 'tag')
+    .select([
+      'article.id',
+      'article.title', 
+      'article.createTime'
+    ])
+    .addSelect([
+      'tag.id',
+      'tag.label'
+    ])
+    .orderBy('article.createTime', 'DESC')
+    .getManyAndCount()
+    
+    const [list, total] = articleList
+    return {
+      list,
+      total
+    }
   }
 }

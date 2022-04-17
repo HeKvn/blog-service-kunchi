@@ -24,6 +24,12 @@ export class ArticleController {
     return this.articleService.getMore(listDTO)
   }
 
+  @ApiOkResponse({ description: '获取所有文章列表归档', type: ArticleListResponse })
+  @Get('all')
+  getAllArticleList () {
+    return this.articleService.getAllArticle()
+  }
+
   @Get(':id')
   @ApiOkResponse({ description: '文章详情', type: ArticleInfoResponse })
   getOne (@Param() idDTO: IdDTO) {
